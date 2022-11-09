@@ -28,8 +28,11 @@ export class ProductsController {
   @Patch(':id')
   updateProduct(
     @Param('id') prodId: string,
-    @Body('title') prodTitle: string,
+    @Body('title') prodtitle: string,
     @Body('description') prodDescription: string,
     @Body('price') prodPrice: number,
-  ) {}
+  ) {
+    this.productsService.updateProduct(prodId, prodtitle, prodDescription, prodPrice);
+    return null;
+  }
 }
