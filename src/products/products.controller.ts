@@ -1,5 +1,7 @@
 import { Controller, Post, Body, Get, Param, Patch, Delete } from '@nestjs/common';
 import { ProductService } from './products.service';
+
+
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductService) {}
@@ -17,7 +19,6 @@ export class ProductsController {
     );
     return { id: generatedId };
   }
-
 
   @Get()
   async getAllProducts() {
